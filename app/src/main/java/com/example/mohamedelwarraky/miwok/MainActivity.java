@@ -88,11 +88,13 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         if (back_pressed + 1500 > System.currentTimeMillis()) {
             super.onBackPressed();
+            // Cancel toast messege when user exit the app
             mToast.cancel();
         }
         else {
             //show toast messege when user press back once
             mToast = Toast.makeText(MainActivity.this, "Press once again to exit!", Toast.LENGTH_SHORT);
+            // Show toast messege
             mToast.show();
         }
         back_pressed = System.currentTimeMillis();
